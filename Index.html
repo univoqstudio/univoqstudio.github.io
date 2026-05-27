@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Univoq Studio - AI-Powered Creative Branding Studio. Premium design, cinematic visuals, and digital marketing solutions for restaurants, fashion, startups & e-commerce.">
+    <meta name="keywords" content="branding, AI design, creative studio, digital marketing, product photography, reels, social media content">
+    <title>Univoq Studio - AI-Powered Creative Branding Solutions</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d5a8c;
+            --secondary: #ff6b35;
+            --univoq-red: #E63946;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+            --text: #333;
+            --border: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: white;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--univoq-red);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--univoq-red);
+        }
+
+        .cta-nav {
+            background: var(--univoq-red);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #c1121f;
+        }
+
+        /* RESPONSIVE NAV */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--univoq-red);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: white;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .logo-text {
+                font-size: 14px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--univoq-red) 0%, #a4161a 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 36px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--univoq-red);
+        }
+
+        .btn-primary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        h2 {
+            font-size: 42px;
+            color: var(--univoq-red);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: var(--univoq-red);
+            margin-bottom: 15px;
+        }
+
+        /* FEATURES SECTION */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--univoq-red);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            text-align: center;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--univoq-red);
+        }
+
+        .service-item h4 {
+            color: var(--univoq-red);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .service-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-item li {
+            padding: 6px 0;
+            color: #666;
+            font-size: 14px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-item li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--univoq-red);
+            font-weight: bold;
+        }
+
+        /* PRICING SECTION */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--univoq-red);
+            background: rgba(230, 57, 70, 0.05);
+            transform: scale(1.05);
+        }
+
+        .price-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--univoq-red);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .price-card h3 {
+            margin: 20px 0;
+        }
+
+        .price {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--univoq-red);
+            margin: 20px 0;
+        }
+
+        .price-period {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            color: #666;
+            font-size: 14px;
+        }
+
+        .price-features li:before {
+            content: '✓ ';
+            color: var(--univoq-red);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* PORTFOLIO SECTION */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            background: linear-gradient(135deg, var(--univoq-red) 0%, #a4161a 100%);
+            color: white;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 2px solid var(--border);
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* PROCESS SECTION */
+        .process {
+            background: var(--light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            background: var(--univoq-red);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step h3 {
+            color: var(--univoq-red);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--univoq-red);
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        .testimonial p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--univoq-red);
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            background: linear-gradient(135deg, var(--univoq-red) 0%, #a4161a 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h3 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: white;
+            color: var(--univoq-red);
+            padding: 14px 36px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* SOCIAL LINKS */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: var(--univoq-red);
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .social-btn:hover {
+            background: var(--univoq-red);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: var(--univoq-red);
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--univoq-red);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .modal h2 {
+            text-align: left;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--univoq-red);
+        }
+
+        /* T&C PAGE */
+        .terms-page {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .terms-page h2 {
+            color: var(--univoq-red);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .terms-page h3 {
+            color: var(--univoq-red);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .terms-page p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .terms-page ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .terms-page li {
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .price-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        /* UTILITY CLASSES */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <nav>
+        <a href="#home" class="logo">
+            <img src="univoq-logo.webp" alt="Univoq Studio Logo">
+            <span class="logo-text">UNIVOQ</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="cta-nav">Get Started</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">✦ PREMIUM CREATIVE STUDIO ✦</div>
+        <h1>Transform Your Brand with AI-Powered Creativity</h1>
+        <p>Premium design, cinematic visuals & strategic digital marketing for restaurants, fashion, startups & e-commerce brands</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="openModal('contactModal')">Book a Consultation</button>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <div class="container">
+        <h2>Why Choose Univoq Studio</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>AI-Enhanced Visuals</h3>
+                <p>Cutting-edge AI technology combined with human creativity for stunning professional designs</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Delivery</h3>
+                <p>Quick turnaround times without compromising quality—get your content when you need it</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Trend-Focused</h3>
+                <p>Stay ahead of market trends with data-driven, trend-aware creative strategies</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Premium Quality</h3>
+                <p>Professional brand identity design and complete aesthetic systems</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Social Ready</h3>
+                <p>All creatives optimized for Instagram, Reels, Stories & other platforms</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3>Multi-Industry</h3>
+                <p>Proven expertise across restaurants, fashion, tech, and startups</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="services">
+    <div class="container">
+        <h2>What We Create</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h4>🎨 Visual Design</h4>
+                <ul>
+                    <li>Posters & banners</li>
+                    <li>Brand identity design</li>
+                    <li>Packaging designs</li>
+                    <li>Color palettes</li>
+                    <li>Typography styling</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h4>🤖 AI-Powered Content</h4>
+                <ul>
+                    <li>Product photography</li>
+                    <li>Food photography</li>
+                    <li>3D presentations</li>
+                    <li>Advertisement visuals</li>
+                    <li>Cinematic shots</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h4>🎬 Video & Motion</h4>
+                <ul>
+                    <li>Promotional reels</li>
+                    <li>Instagram Reels</li>
+                    <li>Brand videos</li>
+                    <li>Motion graphics</li>
+                    <li>Festival campaigns</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h4>📱 Social Media</h4>
+                <ul>
+                    <li>Feed designs</li>
+                    <li>Story designs</li>
+                    <li>Campaign creatives</li>
+                    <li>Hashtag strategy</li>
+                    <li>Content management</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h4>💼 Branding</h4>
+                <ul>
+                    <li>Brand strategy</li>
+                    <li>Logo design</li>
+                    <li>Brand guidelines</li>
+                    <li>Aesthetic systems</li>
+                    <li>Identity packages</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h4>🎯 Marketing</h4>
+                <ul>
+                    <li>Campaign visuals</li>
+                    <li>Email graphics</li>
+                    <li>Ad creatives</li>
+                    <li>Promotional materials</li>
+                    <li>Menu designs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section id="process" class="process">
+    <div class="container">
+        <h2>Our Creative Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Discovery</h3>
+                <p>Understand your brand, goals, audience & competitive landscape</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Strategy</h3>
+                <p>Develop content strategy, design direction & messaging framework</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>AI Creation</h3>
+                <p>Generate initial concepts, photos & design elements using AI</p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Design</h3>
+                <p>Professional refinement & brand alignment for premium results</p>
+            </div>
+            <div class="step">
+                <div class="step-number">05</div>
+                <h3>Delivery</h3>
+                <p>Optimized files ready for your chosen platforms</p>
+            </div>
+            <div class="step">
+                <div class="step-number">06</div>
+                <h3>Optimize</h3>
+                <p>Monitor performance & continuously improve results</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section id="pricing">
+    <div class="container">
+        <h2>Flexible Pricing Plans</h2>
+        <div class="pricing-cards">
+            <div class="price-card">
+                <h3>STARTER</h3>
+                <div class="price">₹5,999<span class="price-period">/month</span></div>
+                <ul class="price-features">
+                    <li>8 Social Media Posts</li>
+                    <li>2 Promotional Reels</li>
+                    <li>4 AI Product Creatives</li>
+                    <li>Basic Branding Support</li>
+                    <li>Caption Writing</li>
+                    <li>Hashtag Strategy</li>
+                    <li>1 Festival Creative</li>
+                    <li>1 Promotional Poster</li>
+                </ul>
+                <button class="btn btn-primary" onclick="openModal('contactModal')">Get Started</button>
+            </div>
+            <div class="price-card featured">
+                <div class="badge-popular">MOST POPULAR</div>
+                <h3>GROWTH</h3>
+                <div class="price">₹8,999<span class="price-period">/month</span></div>
+                <ul class="price-features">
+                    <li>15 Premium Posts</li>
+                    <li>6 Reels & Videos</li>
+                    <li>AI Advertisement Creatives</li>
+                    <li>Weekly Story Designs</li>
+                    <li>Social Media Strategy</li>
+                    <li>Menu & Banner Designs</li>
+                    <li>Swiggy/Zomato Creatives</li>
+                    <li>Festival Campaigns</li>
+                    <li>Brand Theme Consistency</li>
+                    <li>Monthly Content Planning</li>
+                </ul>
+                <button class="btn btn-primary" onclick="openModal('contactModal')">Get Started</button>
+            </div>
+            <div class="price-card">
+                <h3>PREMIUM</h3>
+                <div class="price">₹14,999<span class="price-period">/month</span></div>
+                <ul class="price-features">
+                    <li>Full Social Media Management</li>
+                    <li>Daily Content Posting</li>
+                    <li>12-15 Cinematic Reels</li>
+                    <li>AI Advertisement Videos</li>
+                    <li>Premium Branding Design</li>
+                    <li>Product Campaign Visuals</li>
+                    <li>Advanced Menu Designs</li>
+                    <li>Story & Community Mgmt</li>
+                    <li>Trend Research & Strategy</li>
+                    <li>Priority Support</li>
+                    <li>Brand Consultation</li>
+                </ul>
+                <button class="btn btn-primary" onclick="openModal('contactModal')">Get Started</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section id="portfolio">
+    <div class="container">
+        <h2>Our Work</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">
+            Premium creative solutions delivered for diverse industries and brands
+        </p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">🍽️ Restaurants</div>
+            <div class="portfolio-item">👗 Fashion</div>
+            <div class="portfolio-item">🖥️ Electronics</div>
+            <div class="portfolio-item">🥤 Beverages</div>
+            <div class="portfolio-item">🚀 Startups</div>
+            <div class="portfolio-item">📦 E-commerce</div>
+            <div class="portfolio-item">🏪 Retail</div>
+            <div class="portfolio-item">📱 Digital</div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section style="background: var(--light);">
+    <div class="container">
+        <h2>What Clients Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Univoq Studio transformed our brand presence. The quality and speed of delivery exceeded our expectations."</p>
+                <div class="testimonial-author">- Restaurant Owner</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Their AI-powered creatives helped us increase engagement by 300% in just two months."</p>
+                <div class="testimonial-author">- E-commerce Brand</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Professional, creative, and results-driven. Highly recommend Univoq Studio for brand transformation."</p>
+                <div class="testimonial-author">- Fashion Startup</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:univoqstudio@gmail.com" style="color: white; text-decoration: none;">univoqstudio@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h3>Instagram</h3>
+                        <p><a href="https://instagram.com/Univoq_studio" target="_blank" style="color: white; text-decoration: none;">@Univoq_studio</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div>
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="https://instagram.com/Univoq_studio" target="_blank" class="social-btn" title="Instagram">📷</a>
+                            <a href="https://wa.me/919876543210" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📋</div>
+                    <div>
+                        <h3>Legal</h3>
+                        <p><a href="javascript:showTerms()" style="color: white; text-decoration: none; cursor: pointer;">Terms & Conditions</a></p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name" style="color: white;">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" style="color: white;">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" style="color: white;">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" style="color: white;">Tell Us About Your Project *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>UNIVOQ STUDIO</h3>
+            <p>AI-Powered creative branding studio transforming businesses through modern design and premium visuals.</p>
+            <p style="margin-top: 15px; font-size: 12px;">Creative • Modern • Professional</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#services">Brand Design</a></li>
+                <li><a href="#services">AI Product Photos</a></li>
+                <li><a href="#services">Social Media Content</a></li>
+                <li><a href="#services">Video Production</a></li>
+                <li><a href="#services">Marketing Campaigns</a></li>
+                <li><a href="#services">Packaging Design</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Industries</h3>
+            <ul>
+                <li><a href="#portfolio">Restaurants & Cafes</a></li>
+                <li><a href="#portfolio">Fashion Brands</a></li>
+                <li><a href="#portfolio">E-commerce</a></li>
+                <li><a href="#portfolio">Startups</a></li>
+                <li><a href="#portfolio">Electronics</a></li>
+                <li><a href="#portfolio">Beverages</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Univoq Studio. All rights reserved. | <a href="javascript:showTerms()" style="color: #888; text-decoration: none;">Terms & Conditions</a> | Premium Creative Branding Solutions</p>
+    </div>
+</footer>
+
+<!-- CONTACT MODAL -->
+<div class="modal" id="contactModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('contactModal')">×</button>
+        <h2>Start Your Project</h2>
+        <form id="modalForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="modalName">Full Name *</label>
+                <input type="text" id="modalName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="modalEmail">Email Address *</label>
+                <input type="email" id="modalEmail" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="modalPhone">Phone Number</label>
+                <input type="tel" id="modalPhone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="modalMessage">Tell Us About Your Project *</label>
+                <textarea id="modalMessage" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- TERMS & CONDITIONS MODAL -->
+<div class="modal" id="termsModal">
+    <div class="modal-content" style="max-width: 700px; max-height: 80vh; overflow-y: auto;">
+        <button class="modal-close" onclick="closeModal('termsModal')">×</button>
+        <div class="terms-page">
+            <h2>Terms & Conditions</h2>
+            
+            <h3>1. Service Description</h3>
+            <p>Univoq Studio provides creative branding and digital marketing services including but not limited to graphic design, content creation, video production, and social media management. All services are tailored based on the selected plan and client requirements.</p>
+
+            <h3>2. Payment Terms</h3>
+            <ul>
+                <li>Payment is due upon project initiation</li>
+                <li>Monthly plans are billed on the same date each month</li>
+                <li>We accept all major payment methods</li>
+                <li>Invoices will be sent to the email address provided at signup</li>
+                <li>Late payments may result in service suspension</li>
+            </ul>
+
+            <h3>3. Cancellation Policy</h3>
+            <p>Clients may cancel their subscription at any time. Cancellations must be submitted in writing to univoqstudio@gmail.com. No refunds are provided for partial months or unused services. The final month's deliverables will be completed before the cancellation takes effect.</p>
+
+            <h3>4. Revision Policy</h3>
+            <ul>
+                <li>All plans include unlimited revisions until client satisfaction</li>
+                <li>Revisions must be requested within 7 days of initial delivery</li>
+                <li>Major scope changes may require a revised quote</li>
+                <li>Revisions are included in the project timeline</li>
+            </ul>
+
+            <h3>5. Intellectual Property</h3>
+            <p>Upon full payment, all original design work becomes the property of the client. However, we retain the right to showcase work in our portfolio and use designs for promotional purposes (unless client requests confidentiality). Client-provided content remains the property of the client.</p>
+
+            <h3>6. Confidentiality</h3>
+            <p>Univoq Studio maintains strict confidentiality regarding all client information and business details. We do not share client data with third parties without explicit consent. However, we may use general case studies and results to demonstrate our expertise.</p>
+
+            <h3>7. Delivery Timeline</h3>
+            <ul>
+                <li>Starter Plan: 5-7 business days</li>
+                <li>Growth Plan: 3-5 business days</li>
+                <li>Premium Plan: 2-3 business days</li>
+                <li>Delays may occur due to scope changes or client feedback</li>
+                <li>Rush delivery options available at additional cost</li>
+            </ul>
+
+            <h3>8. Client Responsibilities</h3>
+            <ul>
+                <li>Provide clear project briefs and requirements</li>
+                <li>Supply all necessary content, images, and information</li>
+                <li>Respond to requests promptly to maintain timeline</li>
+                <li>Provide constructive feedback for revisions</li>
+                <li>Ensure all provided content is original and non-infringing</li>
+            </ul>
+
+            <h3>9. Content Guidelines</h3>
+            <p>We will not create content that is:</p>
+            <ul>
+                <li>Illegal, defamatory, or violates intellectual property rights</li>
+                <li>Hateful, discriminatory, or promotes violence</li>
+                <li>Explicit or adult-oriented in nature</li>
+                <li>Misleading or deceptive</li>
+                <li>Violates third-party rights or platform guidelines</li>
+            </ul>
+
+            <h3>10. Limitation of Liability</h3>
+            <p>Univoq Studio is not responsible for any indirect, incidental, or consequential damages. Our liability is limited to the amount paid for services. We are not responsible for results from improper use of deliverables or integration with third-party platforms.</p>
+
+            <h3>11. Modifications to Terms</h3>
+            <p>Univoq Studio reserves the right to modify these terms at any time. Changes will be communicated via email. Continued use of services after modifications constitutes acceptance of new terms.</p>
+
+            <h3>12. Dispute Resolution</h3>
+            <p>Any disputes shall be resolved through mutual discussion. If unresolved, disputes may be escalated to mediation or arbitration as mutually agreed. These terms are governed by applicable laws.</p>
+
+            <h3>13. Contact Information</h3>
+            <p>For questions regarding these terms or to file a complaint, contact us at:</p>
+            <ul>
+                <li>Email: univoqstudio@gmail.com</li>
+                <li>Instagram: @Univoq_studio</li>
+            </ul>
+
+            <h3>14. Acceptance</h3>
+            <p>By using Univoq Studio services, you agree to these Terms & Conditions. If you do not agree, please do not use our services.</p>
+
+            <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 12px;">Last Updated: May 2024 | © 2024 Univoq Studio. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Modal Functions
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+    }
+
+    function showTerms() {
+        openModal('termsModal');
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            e.target.classList.remove('active');
+        }
+    });
+
+    // Form Submission Handler
+    function handleSubmit(event) {
+        event.preventDefault();
+        
+        // Get form data
+        const form = event.target;
+        const name = form.querySelector('input[name="name"]').value;
+        const email = form.querySelector('input[name="email"]').value;
+        const phone = form.querySelector('input[name="phone"]').value || 'Not provided';
+        const message = form.querySelector('textarea[name="message"]').value;
+
+        // Create WhatsApp link
+        const whatsappPhone = '919876543210'; // Your WhatsApp number
+        const whatsappMessage = `Hello! I'm interested in your services. 
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Message: ${message}`;
+        
+        const whatsappURL = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        // Show confirmation and open WhatsApp
+        alert('Thank you for your interest! Opening WhatsApp to connect with us...');
+        window.open(whatsappURL, '_blank');
+        
+        // Also send email
+        const emailLink = `mailto:univoqstudio@gmail.com?subject=Project Inquiry from ${name}&body=${encodeURIComponent(whatsappMessage)}`;
+        window.open(emailLink, '_blank');
+        
+        // Reset form
+        form.reset();
+        
+        // Close modal if in modal
+        if (event.target.closest('.modal')) {
+            closeModal('contactModal');
+        }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== 'javascript:void(0)' && !href.includes('javascript:')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+
+    // Add scroll effect to header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 10) {
+            header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+        } else {
+            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+        }
+    });
+</script>
+
+</body>
+</html>
